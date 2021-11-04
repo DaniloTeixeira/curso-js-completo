@@ -209,6 +209,7 @@ switch (drinkType) {
 */
 
 const a = 2;
+let response = `O valor de "a" é `;
 
 // if (a === 0) {
 //   console.log(`O valor de "a" é ${a}`)
@@ -217,3 +218,14 @@ const a = 2;
 // } else {
 //   console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
+
+switch (a) {
+  case 0:
+    console.log(`${response} ${a}.`);
+    break;
+  case 1:
+    console.log(`${response} ${a}.`);
+  default:
+    console.log(`${response} qualquer número, exceto 0 e 1.`);
+    break;
+}
