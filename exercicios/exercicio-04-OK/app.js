@@ -13,15 +13,11 @@
   "Minhas 3 séries favoritas são: SÉRIE_01, SÉRIE_02 e SÉRIE_03."
 */
 
-const my3FavoriteTVShows = [
-  "Friends",
-  "How I Met Your Mother",
-  "Grey's Anatomy",
-];
-const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows
-  .join(", ")
-  .replace(", G", " e G")}`;
-// console.log(sentence)
+const my3FavoriteTVShows = ["Friends", "How I met Your Mother", "Greys Anatomy"];
+
+const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.join(", ").replace(", G", " e G")}.`;
+
+// console.log(sentence);
 
 /*
   02 - Comente o console.log() acima e:
@@ -30,7 +26,7 @@ const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows
     possui 3 itens.
 */
 
-// console.log(my3FavoriteTVShows.length === 3)
+// console.log(my3FavoriteTVShows.length === 3);
 
 /*
   03 - Comente o console.log() acima e:
@@ -43,8 +39,10 @@ const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows
 */
 
 const randomTVShow = "Watchmen";
+
 const isRandomTVShowIncluded = my3FavoriteTVShows.includes(randomTVShow);
-// console.log(isRandomTVShowIncluded)
+
+// console.log(isRandomTVShowIncluded);
 
 /*
   04 - Comente o console.log() acima e:
@@ -58,7 +56,8 @@ const isRandomTVShowIncluded = my3FavoriteTVShows.includes(randomTVShow);
 */
 
 const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armazena é: ${typeof isRandomTVShowIncluded}.`;
-// console.log(typeSentence)
+
+// console.log(typeSentence);
 
 /*
   05 - Comente o console.log() acima e:
@@ -75,7 +74,10 @@ const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armaze
 */
 
 const number = 39;
-// console.log(`A string que a 'typeSentence' armazena mais de ${number} caracteres? ${String(typeSentence.length === number).replace('f', 'F')}.`)
+
+const convertToString = String(typeSentence === number).replace("f", "F");
+
+// console.log(`A string que a "typeSentence" armazena mais de ${number} caracteres? ${convertToString}.`);
 
 /*
   06 - Comente o console.log() acima e:
@@ -88,7 +90,8 @@ const number = 39;
 */
 
 const falsyValues = [0, "", false, "", ``, null, undefined, NaN];
-// console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o ${falsyValues[2]}.`)
+
+// console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o ${typeof falsyValues[2]}.`);
 
 /*
   07 - Comente o console.log() acima e:
@@ -99,10 +102,12 @@ const falsyValues = [0, "", false, "", ``, null, undefined, NaN];
   - Você sabe por que essa conversão resultou em true?
 */
 
-crazyOperation = undefined + 1; // null + 1 = 1   undefined + 1 = NaN
-crazyConvertion = Boolean(crazyOperation); // é true pq 1 é um número truthy
-// console.log(crazyOperation)
-// console.log(crazyConvertion)
+const crazyOperation = null + 1;
+
+const crazyConversion = Boolean(crazyOperation);
+
+// console.log(crazyConversion);
+// A conversão resultou em true, pois a soma de null + 1 resulta em 1, que é um número truthy
 
 /*
   08 - Comente o console.log() acima e:
@@ -118,8 +123,10 @@ crazyConvertion = Boolean(crazyOperation); // é true pq 1 é um número truthy
 */
 
 const ages = [31, 82, 61, 11];
-const ageSum = ages[0] + ages[2];
-// console.log(`A soma entre o 1º e o 3º item de "ages" é menor ou igual a 92. Essa afirmação é: ${ageSum <= 92}`)
+
+const agesSum = ages[0] + ages[2];
+
+// console.log(`A soma entre o 1º e o 3º item de "ages" é menor ou igual a 92. Essa afirmação é: ${agesSum <= 92}.`);
 
 /*
   09 - Comente o console.log() acima e:
@@ -130,8 +137,14 @@ const ageSum = ages[0] + ages[2];
   - Exiba a "isNotAString" no console.
 */
 
-isNotAString = typeof randomTVShow !== "string";
-// console.log(isNotAString)
+// opção 1
+const isNotAString = !randomTVShow === "string";
+
+// opção 2
+const isNotAString2 = typeof randomTVShow != "string";
+
+// console.log(isNotAString);
+// console.log(isNotAString2);
 
 /*
   10 - Comente o console.log() acima e:
@@ -142,5 +155,12 @@ isNotAString = typeof randomTVShow !== "string";
 */
 
 const evenNumbers = [0, 2, 4, 6, 8, 10];
-// console.log(Boolean(evenNumbers.indexOf(8))) // primeira opção
-// console.log(evenNumbers.indexOf(8) !== -1) // segunda opção
+
+// opção 1
+console.log(Boolean(evenNumbers.includes(8)));
+
+// opção 2 - sem usar o includes
+console.log(Boolean(evenNumbers.indexOf(8)));
+
+// oppção 3 - (!= de -1), pois quando o método indexOf não encontra o que está procurando, retorna -1
+console.log(Boolean(evenNumbers.indexOf(8) != -1));

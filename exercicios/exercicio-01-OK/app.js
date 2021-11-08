@@ -18,6 +18,8 @@ Faça o seguinte:
 03 - Para certificar-se que este arquivo realmente está linkado, exiba a frase  
 "JS is Awesome!" em um alert no browser.
 
+
+
 Como mencionei durante a aula: não se preocupe em entender 100% o que os comandos  
 "alert" e "console" fazem. Nós falaremos sobre eles mais à frente =)
 

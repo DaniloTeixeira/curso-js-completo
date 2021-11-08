@@ -21,8 +21,9 @@
     5
 */
 
-// i = 0;
-// while(i <= 5) {
+// let i = 0;
+
+// while (i <= 5) {
 //   console.log(i);
 //   i++;
 // }
@@ -48,16 +49,17 @@
   "Esta é a Xª vez que esta frase é exibida no console."
 */
 
-// // Utilizando o for
-// for (let i = 1; i <= 10; i++) {
-//   // console.log(`Esta é a ${i} vez que esta frase é exibida no console.`);
+// utilizando o while
+// let i = 1;
+
+// while (i <= 10) {
+//   console.log(`Esta é a ${i}ª vez que esta frase é exibida no console.`);
+//   i++;
 // }
 
-// // Utilizando o while
-// i = 1;
-// while (i <= 10) {
-//   console.log(`Esta é a ${i} vez que esta frase é exibida no console.`);
-//   i++;
+// utilizando o for
+// for (let index = 1; index <= 10; index++) {
+//   console.log(`Esta é a ${index}ª vez que esta frase é exibida no console.`);
 // }
 
 /*
@@ -71,18 +73,11 @@
 */
 
 const cities = ["São Paulo", "Rio de Janeiro", "Minas Gerais"];
-let upperCaseCities = [];
 
-// // Utilizando o for
+// let upperCaseCities = [];
+
 // for (let i = 0; i < cities.length; i++) {
-//   upperCaseCities.push(cities[i].toUpperCase());
-// }
-
-// // Utilizando o while
-// i = 0;
-// while (i < cities.length) {
-//   upperCaseCities.push(cities[i].toUpperCase());
-//   i++;
+//   upperCaseCities.push(cities[i]);
 // }
 // console.log(upperCaseCities);
 
@@ -96,12 +91,18 @@ let upperCaseCities = [];
 */
 
 const names = ["João Grilo", "Chicó", "Rosinha"];
-let HTMLTemplate = "";
 
-for (let i = 0; i < names.length; i++) {
-  HTMLTemplate += `<li>${names[i]}</li>`;
-}
+// utilizando o for loop
+// let HTMLTemplate = "";
+
+// for (let i = 0; i < names.length; i++) {
+//   HTMLTemplate += `<li>${names[i]}</li>`;
+// }
 // console.log(HTMLTemplate);
+
+// sem utilizado o for loop
+// console.log(`<li>${names.join("</li><li>")}</li>`);
+
 /*
   06 - Comente o console.log acima e:
 
@@ -111,13 +112,7 @@ for (let i = 0; i < names.length; i++) {
   - O console deve exibir true.
 */
 
-let sum = 0;
-
 const numbers = ["91", "5", "30", "97", "83", "31"];
-for (let i = 0; i < numbers.length; i++) {
-  sum += Number(numbers[i]);
-}
-// console.log(sum === 337);
 
 /*
   07 - Comente o console.log acima.
@@ -151,4 +146,4 @@ for (let i = 0; i < arrays.length; i++) {
     arraySum += arrays[i][j];
   }
 }
-console.log(arraySum);
+// console.log(arraySum);

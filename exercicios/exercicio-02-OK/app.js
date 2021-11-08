@@ -58,8 +58,9 @@ const js = programmingLanguage[0] + programmingLanguage[4];
 */
 
 const mozilla = "Mozilla Developer Network";
+// o colchete seleciona a posição da letra na string, da mesma forma que um array.
 const mdn = mozilla[0] + mozilla[8] + mozilla[18];
-// console.log(mdn)
+// console.log(mdn);
 
 /*
 07 - Comente o console.log acima, e,
@@ -108,7 +109,7 @@ const winterMessage = "o inverno está chegando";
 - Exiba, no console, o index do caractere "v" da "winterMessage";
 */
 
-// console.log(winterMessage.indexOf('v')) // Busca a primeira ocorrência
+// console.log(winterMessage.indexOf("v")); // Busca a primeira ocorrência e retorna a posição do seu index no array
 
 /*
 12 - Comente o console.log acima, e,
@@ -116,7 +117,7 @@ const winterMessage = "o inverno está chegando";
 - Exiba, no console, o index da última ocorrência do caractere "n" da "winterMessage".
 */
 
-// console.log(winterMessage.lastIndexOf('n')) // Busca a última ocorrência
+// console.log(winterMessage.lastIndexOf("n")); // Busca a última ocorrência e retorna a posição do seu index no array
 
 /*
 13 - Comente o console.log acima, e,
@@ -126,7 +127,7 @@ const winterMessage = "o inverno está chegando";
 */
 
 const harryPotterAuthor = "J.K. Rowling";
-// console.log(harryPotterAuthor.slice(0,4))
+// console.log(harryPotterAuthor.slice(0, 4));
 
 /*
 14 - Comente o console.log acima, e,
@@ -138,7 +139,7 @@ const harryPotterAuthor = "J.K. Rowling";
 
 const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!';
 const realBestMovie = bestMovie.replace("La la land", "Moonlight");
-// console.log(realBestMovie)
+// console.log(realBestMovie);
 
 /*
 15 - Comente o console.log acima, e,
@@ -148,7 +149,7 @@ const realBestMovie = bestMovie.replace("La la land", "Moonlight");
 */
 
 const reminder = 10 % 3;
-// console.log(reminder)
+// console.log(reminder);
 
 /*
 16 - Comente o console.log acima, e,
@@ -217,15 +218,17 @@ const bookMessage = "'O Conto da Aia' é um dos livros mais vendidos da década.
 - Exiba a "newName" no console;
 */
 
-const name = "walter white";
-// const newName = name.replace('w', 'W').replace('w', 'W') // primeira opção
-const newName =
-  name[0].toUpperCase() +
-  name.slice(1, 6) +
-  " " +
-  name[7].toUpperCase() +
-  name.slice(8); // segunda opção
-// console.log(newName)
+const oldName = "walter white";
+
+// opção 1
+let newName = oldName.replace("w", "W").replace("w", "W");
+
+//opção 2
+let newName2 = `${oldName[0].toUpperCase()}${oldName.slice(1, 6)} 
+${oldName[0].toUpperCase()}${oldName.slice(8, 12)}`;
+
+// console.log(newName);
+// console.log(newName2);
 
 /*
 22 - Comente o console.log acima, e,
@@ -237,5 +240,10 @@ const newName =
 - Exiba a "newName" no console;
 */
 
-// console.log(`${newName.slice(0, 6)} ${newName.slice(7,12)}`) // primeira opção
-// console.log(`${newName[0]}${newName.slice(1, 6)} ${newName[7]}${newName.slice(8)}`) // segunda opção
+// primeira opção
+console.log(`${newName.slice(0, 6)} ${newName.slice(7, 12)}`);
+
+// segunda opção
+console.log(
+  `${newName[0]}${newName.slice(1, 6)} ${newName[7]}${newName.slice(8)}`
+);

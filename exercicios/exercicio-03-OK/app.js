@@ -22,7 +22,7 @@ const brazilianFoods = [];
 */
 
 brazilianFoods.push("Coxinha", null, "Brigadeiro");
-// console.log(brazilianFoods)
+// console.log(brazilianFoods);
 
 /*
 04 - Comente o console.log acima e:
@@ -32,8 +32,8 @@ array "brazilianFoods" (null) seja substituído por "Pão de Queijo";
 - Exiba apenas o 2º item desse array no console.
 */
 
-brazilianFoods[1] = "Pão de Queijo";
-// console.log(brazilianFoods[1])
+brazilianFoods[1] = "Pão de queijo";
+// console.log(brazilianFoods);
 
 /*
 05 - Comente o console.log acima e:
@@ -48,8 +48,13 @@ mas sem digitar os nomes das comidas diretamente;
 - Exiba a foodsInfo no console.
 */
 
-const foodsInfo = `Até aqui, o array "brazilianFoods" possui ${brazilianFoods.length} itens: ${brazilianFoods[0]}, ${brazilianFoods[1]} e ${brazilianFoods[2]}`;
-// console.log(foodsInfo)
+// opção 1
+const foodsInfo = `Até aqui, o array "brazilianFoods" possui ${brazilianFoods.length} itens: ${brazilianFoods.join(", ").replace(", B", " e B")}.`;
+
+// opção 2
+const foodsInfo_2 = `Até aqui, o  array "brazilianFoods" possui ${brazilianFoods.length} itens: ${brazilianFoods[0]}, ${brazilianFoods[1]} e ${brazilianFoods[2]}.`;
+
+// console.log(foodsInfo);
 
 /*
 06 - Comente o console.log acima e:
@@ -64,9 +69,12 @@ itens "Lilica" e "Matilda";
 */
 
 const maleDogNames = ["Chico", "Zeca"];
+
 const femaleDogNames = ["Lilica", "Matilda"];
+
 const dogNames = maleDogNames.concat(femaleDogNames);
-// console.log(dogNames)
+
+// console.log(dogNames);
 
 /*
 07 - Comente o console.log acima e:
@@ -77,7 +85,7 @@ const dogNames = maleDogNames.concat(femaleDogNames);
 - O resultado deve ser: "nome1, nome2, nome3, nome4".
 */
 
-// console.log(dogNames.join(', '))
+// console.log(dogNames.join(", "));
 
 /*
 08 - Comente o console.log acima e:
@@ -93,7 +101,7 @@ agora é "Lilica".
 */
 
 dogNames.pop();
-// console.log(dogNames[dogNames.length -1])
+// console.log(dogNames[dogNames.length - 1]);
 
 /*
 09 - Comente o console.log acima e:
@@ -108,9 +116,14 @@ apenas as letras iniciais dos nomes do array "dogNames";
 */
 
 dogNames.push("Nina");
-const initials = `${dogNames[0][0]}${dogNames[1][0]}${dogNames[2][0]}${dogNames[3][0]}`; // segunda opção
-// const initials = `${dogNames[0].slice(0, 1)} ${dogNames[1].slice(0, 1)} ${dogNames[2].slice(0, 1)} ${dogNames[3].slice(0, 1)}` // primeira opção
-// console.log(initials)
+
+// opção 1
+const initials = `${dogNames[0][0]}${dogNames[1][0]}${dogNames[2][0]}${dogNames[3][0]}`;
+
+// opção 2
+const initials2 = `${dogNames[0].slice(0, 1)}${dogNames[1].slice(0, 1)}${dogNames[2].slice(0, 1)}${dogNames[3].slice(0, 1)}`;
+
+// console.log(initials2);
 
 /*
 10 - Comente o console.log acima e:
@@ -119,7 +132,7 @@ const initials = `${dogNames[0][0]}${dogNames[1][0]}${dogNames[2][0]}${dogNames[
 - Utilize o método adequado para isso.
 */
 
-// console.log(initials.toLowerCase())
+// console.log(initials.toLowerCase());
 
 /*
 11 - Comente o console.log acima e:
@@ -138,10 +151,9 @@ constante que você criou.
 */
 // [ 'Chico', 'Zeca', 'Lilica', 'Nina' ]
 
-const dessert = `${dogNames[0].slice(3)}${dogNames[1].slice(2)}${dogNames[3]
-  .slice(2)
-  .replace("n", "d")}`;
-// console.log(`A ${dessert} é um doce à base de coco, tradicional na América Latina e em Angola`)
+const dessert = `${dogNames[0].slice(3, 5)}${dogNames[1].slice(2, 4)}${dogNames[3].slice(2, 4).replace("n", "d")}`;
+
+// console.log(`A ${dessert} é um doce à base de coco, tradicional na América Latina e em Angola.`);
 
 /*
 12 - Comente o console.log acima e:
@@ -156,6 +168,11 @@ já tem, mais 4;
 - Agora, o resultado exibido no console deve ser 729.
 */
 
-const oddNumbers = [3, 5, 7];
+let oddNumbers = [3, 5, 7];
+
 oddNumbers[1] += 4;
+
+// * = multiplicação
+// ** = exponenciação
+
 console.log(oddNumbers[1] ** 3);

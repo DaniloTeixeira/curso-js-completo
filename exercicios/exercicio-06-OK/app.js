@@ -25,12 +25,19 @@
 
 const fruits = ["morango", "banana", "mamão"];
 
-// if (fruits.includes("abacaxi")) {
-//   console.log('A string "abacaxi" existe no array fruits.');
-// } else if (fruits.includes("pera")) {
-//   console.log('A string "pera" existe no array fruits.');
+const isExistsPineaple = fruits.includes("abacaxi");
+const isExistsPear = fruits.includes("pera");
+
+const hasPineapleMsg = 'A string "abacaxi" existe no array fruits';
+const hasPearMsg = 'A string "pera" existe no array fruits';
+const defaultPhraseMsg = 'Nem pera nem abacaxi existem no array "fruits"';
+
+// if (isExistsPineaple) {
+//   console.log(hasPineapleMsg);
+// } else if (isExistsPear) {
+//   console.log(hasPear);
 // } else {
-//   console.log('Nem pera nem abacaxi existem no array "fruits".');
+//   console.log(defaultPhraseMsg);
 // }
 
 /*
@@ -46,40 +53,25 @@ const fruits = ["morango", "banana", "mamão"];
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
 
-const hour = 18;
-const isMorning = hour > 6 && hour < 12;
-const isAfternoon = hour >= 12 && hour < 18;
-const isNight = (hour >= 18 && hour <= 24) || (hour >= 0 && hour < 6);
+const currentHour = 24;
 
-const morningMsg = "Good morning!";
-const afternoonMsg = "Good afternoon!";
-const nightMsg = "Good night!";
-const errorMsg = "Informe uma hora válida!";
+const morningMsg = "Bom dia!";
+const afternoonMsg = "Boa tarde";
+const nightMsg = "Boa noite!";
+const errorMsg = "Hora inválida!";
 
-// if (isMorning) {
+const isItMorning = currentHour >= 6 && currentHour < 12;
+const isItAfternoon = currentHour >= 12 && currentHour < 18;
+const isItNight = (currentHour >= 18 && currentHour < 24) || (currentHour >= 0 && currentHour < 6);
+
+// if (isItMorning) {
 //   console.log(morningMsg);
-// } else if (isAfternoon) {
+// } else if (isItAfternoon) {
 //   console.log(afternoonMsg);
-// } else if (isNight) {
+// } else if (isItNight) {
 //   console.log(nightMsg);
 // } else {
 //   console.log(errorMsg);
-// }
-
-// const hour = 16;
-// const isMorning = hour >= 6 && hour < 12;
-// const isAfternoon = hour >= 12 && hour < 18;
-// const isEvening = hour >= 18 && hour < 23;
-// const isNight = hour === 24 || (hour >= 0 && hour < 6);
-
-// if (isMorning) {
-//   console.log("Bom dia!");
-// } else if (isAfternoon) {
-//   console.log("Boa tarde!");
-// } else if (isEvening || isNight) {
-//   console.log("Boa noite!");
-// } else {
-//   console.log("Digite uma hora válida");
 // }
 
 /*
@@ -96,30 +88,16 @@ const errorMsg = "Informe uma hora válida!";
     também está funcionando.
 */
 
-const age = 35;
+const myAge = 35;
+const freeEntry = myAge <= 7 || myAge >= 65;
+const freeEntryMsg = "Para você a entrada é grátis!";
+const payedEntryMsg = "Para você a entrada é R$30,00";
 
-const isChildOrOlder = age <= 7 || age >= 65;
-const isFreeEntracee = "Para você, a entrada é gratis!";
-const isNotFreeEntrance = "Para você, a entrada é R$30,00";
-
-// if (isChildOrOlder) {
-//   console.log(isFreeEntracee);
+// if (freeEntry) {
+//   console.log(freeEntryMsg);
 // } else {
-//   console.log(isNotFreeEntrance);
+//   console.log(payedEntryMsg);
 // }
-
-// const age = 35;
-// let entryMessage = null;
-// const isChild = age < 7;
-// const isOlder = age > 65;
-
-// if (isChild || isOlder) {
-//   entryMessage = "Para você, a entrada é gratuita!";
-// } else {
-//   entryMessage = "Para você, a entrada é R$ 30,00.";
-// }
-
-// // console.log(entryMessage);
 
 /*
   04
@@ -132,18 +110,17 @@ const isNotFreeEntrance = "Para você, a entrada é R$30,00";
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99];
 
-let numbersBetween11and90 = [];
+const newNumbers = [];
 
 for (let i = 0; i < numbers.length; i++) {
-  const number = numbers[i];
-  const isbetween11And90 = number >= 11 && number <= 90;
+  let item = numbers[i];
+  let isbetween11And90 = item >= 11 && item <= 90;
 
   if (isbetween11And90) {
-    numbersBetween11and90.push(number);
+    newNumbers.push(item);
   }
 }
-
-// console.log(numbersBetween11and90);
+// console.log(newNumbers);
 
 /*
   05
@@ -158,41 +135,27 @@ for (let i = 0; i < numbers.length; i++) {
   "O crazyArray tem X booleans, X números e X strings."
 */
 
-const crazyArray = [
-  true,
-  869,
-  "oi",
-  71,
-  false,
-  83,
-  "35",
-  true,
-  397,
-  "js",
-  false,
-];
+const crazyArray = [true, 869, "oi", 71, false, 83, "35", true, 397, "js", false];
 
-let numberAmount = 0;
 let booleanAmount = 0;
+let numberAmount = 0;
 let stringAmount = 0;
 
 for (let i = 0; i < crazyArray.length; i++) {
   const typeOfItem = typeof crazyArray[i];
-  const isNumber = typeOfItem === "number";
   const isBoolean = typeOfItem === "boolean";
+  const isNumber = typeOfItem === "number";
 
-  if (isNumber) {
-    numberAmount++;
-  } else if (isBoolean) {
+  if (isBoolean) {
     booleanAmount++;
+  } else if (isNumber) {
+    numberAmount++;
   } else {
     stringAmount++;
   }
 }
 
-// console.log(
-//   `O crazyArray tem ${booleanAmount} booleans, ${numberAmount} números e ${stringAmount} strings.`
-// );
+// console.log(`O crazyArray tem ${booleanAmount} booleans, ${numberAmount} números e ${stringAmount} strings`);
 
 /*
   06
@@ -217,21 +180,17 @@ let oddNumbers = [];
 let evenNumbers = [];
 
 for (let i = 0; i < randomNumbers.length; i++) {
-  const numbers = randomNumbers[i];
-  const isOddNumber = numbers % 2 !== 0;
-  if (isOddNumber) {
-    oddNumbers.push(numbers);
+  const item = randomNumbers[i];
+  const isOdd = item % 2 !== 0;
+
+  if (isOdd) {
+    oddNumbers.push(item);
   } else {
-    evenNumbers.push(numbers);
+    evenNumbers.push(item);
   }
 }
 
-const oddNumbersString = `Números pares: ${oddNumbers
-  .join(", ")
-  .replace(", 31", " e 31.")}`;
-
-const evenNumbersString = `Números ímpares: ${evenNumbers
-  .join(", ")
-  .replace(", 58", " e 58.")}`;
+const oddNumbersString = `Números ímpares: ${oddNumbers.join(", ").replace(", 31", " e 31")}.`;
+const evenNumbersString = `Números pares: ${evenNumbers.join(", ").replace(", 58", " e 58")}.`;
 
 console.log(oddNumbersString, evenNumbersString);
