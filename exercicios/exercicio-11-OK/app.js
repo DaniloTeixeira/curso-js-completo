@@ -5,6 +5,8 @@
   - Ela deve ter um escopo global.
 */
 
+const name = 'Danilo';
+
 /*
   02
 
@@ -18,6 +20,16 @@
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
+
+const getAge = () => {
+  let age = 35;
+
+  console.log(age);
+};
+
+getAge();
+
+// console.log(age) -> Esse código gera erro, pois está tentandoa acessar uma variável de escopo local, que foi declarada dentro da função, logo só pode ser acessada dentro da mesma
 
 /*
   03
@@ -37,11 +49,39 @@
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
 
+car = {
+  name: 'Up!',
+  brand: 'Volksvagen',
+  colors: ['Branco Cristal', 'Cinza Platinum', 'Azul Lagoon'],
+  isRunning: false,
+
+  run() {
+    isRunning = true;
+    console.log(`O ${this.name} está em movimento...`);
+  },
+
+  stop() {
+    isRunning = false;
+    console.log(`O ${this.name} está parado.`);
+  },
+
+  getColorsMessage() {
+    const lastItem = this.colors[this.colors.length - 1];
+    const getColors = this.colors.join(', ').replace(`, ${lastItem}`, ` e ${lastItem}`);
+    console.log(`O ${this.name} está disponível nas cores ${getColors}.`);
+  }
+};
+
+car.getColorsMessage();
+
 /*
   04
 
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
+
+car.run();
+console.log(car.isRunning);
 
 /*
   05
@@ -49,11 +89,16 @@
   - Faça o carro parar e exiba no console se ele realmente está parado.
 */
 
+car.stop();
+console.log(car.isRunning);
+
 /*
   06
 
   - Exiba, no console, a mensagem com as cores do carro.
 */
+
+console.log(car.colors);
 
 /*
   07
@@ -61,3 +106,5 @@
   - Exiba, no console, a mensagem "O carro é um MARCA_DO_CARRO NOME_DO_CARRO";
   - Utilize a notação de colchetes para acessar as propriedades do carro.
 */
+
+console.log(`O carro ${car['brand']} ${car['name']}`);

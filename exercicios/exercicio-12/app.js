@@ -25,7 +25,7 @@ const best2019Movies = [
   { title: 'História de um Casamento', directedBy: 'Noah Baumbach' },
   { title: 'Varda por Agnès', directedBy: 'Agnès Varda' },
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
-]
+];
 
 /*
   02
@@ -60,7 +60,7 @@ const youtubeUser = {
     },
     country: 'Brasil'
   }
-}
+};
 
 /*
   03
@@ -77,7 +77,7 @@ const youtubeUser = {
     console.
 */
 
-const firstNumber = 8.3
+const firstNumber = 8.3;
 
 /*
   05
@@ -86,7 +86,7 @@ const firstNumber = 8.3
     forma padrão, e exiba-o no console.
 */
 
-const secondNumber = 3.5
+const secondNumber = 3.5;
 
 /*
   06
@@ -95,7 +95,7 @@ const secondNumber = 3.5
     console.
 */
 
-const thirdNumber = 8.9
+const thirdNumber = 8.9;
 
 /*
   07
@@ -103,11 +103,11 @@ const thirdNumber = 8.9
   - Exiba no console o número abaixo com a parte decimal removida.
 */
 
-const fourthNumber = 5.5
+const fourthNumber = 5.5;
 
 /*
   08
 
-  - A cada vez que o index.html for carregado, exiba no console um número  
+  - A cada vez que o index.html for carregado, exiba no console um número
     aleatório de 0 à 10, incluindo 0 e 10.
 */

@@ -13,9 +13,14 @@
     valor no console.
 */
 
-function convertToString (value) {
-  return String(value)
-}
+// function convertToString(value) {
+//   return String(value);
+// }
+
+const convertToString = (value => String(value));
+
+console.log(typeof convertToString(5));
+
 
 /*
   02
@@ -23,6 +28,10 @@ function convertToString (value) {
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
+
+const getStringLength = (string => string.length);
+
+console.log(getStringLength('Daniolo'));
 
 /*
   03
@@ -34,12 +43,20 @@ function convertToString (value) {
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
 
+const transformToLowerCase = (value => value.toLowerCase());
+
+console.log(transformToLowerCase('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'));
+
 /*
   04
 
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+
+const getIndex = ((character, string) => string.indexOf(character));
+
+console.log(getIndex('n', 'Danilo'));
 
 /*
   05
@@ -48,12 +65,20 @@ function convertToString (value) {
     passado por argumento existe no array (também passado por argumento).
 */
 
+const isItemExists = ((item, array) => array.includes(item));
+
+console.log(isItemExists(8, [1, 3, 5, 7]));
+
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+
+const concatArrays = ((array1, array2) => array1.concat(array2));
+
+console.log(concatArrays([1, 2, 3], [4, 5, 6]));
 
 /*
   07
@@ -62,12 +87,24 @@ function convertToString (value) {
     mas com o último item removido.
 */
 
+const removeLastItem = (array => {
+  array.pop();
+
+  return array;
+});
+
+console.log(removeLastItem([3, 5, 7, 5, 1]));
+
 /*
   08
 
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+
+const isNull = (value => value === null);
+
+console.log(isNull(''));
 
 /*
   09
@@ -80,6 +117,16 @@ function convertToString (value) {
     foi exibido.
 */
 
+// Maneira 1
+const callbackFn = () => {};
+const log = () => console.log('Danilo');
+callbackFn(log());
+
+// Maneira 2
+const callbackFn2 = callback => callback();
+const logName = (() => console.log('Mariana'));
+callbackFn2(logName);
+
 /*
   10
 
@@ -91,6 +138,11 @@ function convertToString (value) {
     resulte no triplo de 33.
 */
 
+const invoqueCallBack = (callback, arg) => callback(arg);
+const triple = (number => number * 3);
+
+console.log(invoqueCallBack(triple, 33));
+
 /*
   11
 
@@ -100,7 +152,11 @@ function convertToString (value) {
   "O Xº item do array [X, X, X] é X."
 */
 
-const numbers = [1, 2, 3]
+const numbers = [1, 2, 3];
+
+numbers.forEach((item, index, array) => {
+  console.log(`O ${index + 1}º item do array [${array}] é ${item}.`);
+});
 
 /*
   12
@@ -110,12 +166,16 @@ const numbers = [1, 2, 3]
     criada.
 */
 
-const letters = ['v', 'e', 'p']
-let lettersCopy = []
+const letters = ['v', 'e', 'p'];
+let lettersCopy = [];
 
-for (let i = 0; i < letters.length; i++) {
-  lettersCopy.push(letters[i])
-}
+// for (let i = 0; i < letters.length; i++) {
+//   lettersCopy.push(letters[i]);
+// }
+
+letters.forEach(item => lettersCopy.push(item));
+
+console.log(lettersCopy);
 
 /*
   13
@@ -135,36 +195,62 @@ for (let i = 0; i < letters.length; i++) {
   </article>
 */
 
-const section = document.querySelector('[data-js="section"]')
+const section = document.querySelector('[data-js="section"]');
 
 const review = [
   'Eu sempre adorei o filme e quando descobri que tinha o livro também fiquei doido. Demorei um pouco mas acabei comprando e finalmente li \o/.',
   'O primeiro filme foi baseado nesse livro, porém o livro (como sempre) é muito mais completo, com mais personagens, mais acontecimentos e até mesmo mais dinossauros. Na verdade nesse livro tem coisas do segundo e terceiro filme também, eles mudaram bastante nos filmes, acho que pra ficar mais comercial, e se o filme é bom, o livro é 100 vezes melhor.',
   'Michael é um ótimo autor, esse sim pesquisa muito antes de escrever um livro, além da história que já prende sua atenção, ele fala bastante de genética (pra explicar como os dinossauros foram criados) e acaba falando um pouco de programação (informática), por causa dos programas avançados e modernos que o parque tinha. E isso foi uma das coisas que eu achei muito legal, ele explica as coisas com gráficos, tabelas, códigos ... enfim, o cara é foda hahaha.',
   'Recomendo esse livro pra quem curte uma boa história de ficção. Apesar de muita gente pensar que o livro não tem graça, porque o legal mesmo é ver o dinossauro no filme, com todos os efeitos especiais, eu digo pra deixar esse pensamento de lado, pois a história é tão bem contada e os detalhes são tão bem relatados, que você passa a fazer parte da história, e vive todas as emoções hahaha.'
-]
+];
 
-let paragraphs = ''
+let paragraphs = '';
 
-section.innerHTML = paragraphs
+review.forEach(sentence => paragraphs += `<p>${sentence}</p>`);
+
+section.innerHTML = paragraphs;
 
 /*
   14
 
-  - Implemente uma função que retorna uma string com a quantidade de pessoas que  
+  - Implemente uma função que retorna uma string com a quantidade de pessoas que
     curtiram um post, conforme descrito a seguir;
-  - A função deve receber por parâmetro um array com os nomes das pessoas que  
-    curtiram o post/vídeo/foto;  
-  - Se o array recebido estiver vazio, a mensagem que a função deve retornar é  
-    "Ninguém curtiu isso";  
-  - Se o array conter apenas um nome, como "Rafael", por exemplo, a mensagem  
-    retornada deve ser "Rafael curtiu isso";  
-  - Se o array conter 2 nomes, a mensagem retornada deve ser  
-    "NOME_1 e NOME_2 curtiram isso";  
-  - Se o array conter 3 nomes, a mensagem retornada deve ser  
-    "NOME_1, NOME_2 e NOME_3 curtiram isso";  
-  - Se o array conter 4 ou mais nomes, a mensagem retornada deve ser  
-    "NOME_1, NOME_2 e mais X pessoas curtiram isso". O "X" deve ser substituído  
-    pelo restante da quantidade de pessoas que curtiram o post (além das duas  
+  - A função deve receber por parâmetro um array com os nomes das pessoas que
+    curtiram o post/vídeo/foto;
+  - Se o array recebido estiver vazio, a mensagem que a função deve retornar é
+    "Ninguém curtiu isso";
+  - Se o array conter apenas um nome, como "Rafael", por exemplo, a mensagem
+    retornada deve ser "Rafael curtiu isso";
+  - Se o array conter 2 nomes, a mensagem retornada deve ser
+    "NOME_1 e NOME_2 curtiram isso";
+  - Se o array conter 3 nomes, a mensagem retornada deve ser
+    "NOME_1, NOME_2 e NOME_3 curtiram isso";
+  - Se o array conter 4 ou mais nomes, a mensagem retornada deve ser
+    "NOME_1, NOME_2 e mais X pessoas curtiram isso". O "X" deve ser substituído
+    pelo restante da quantidade de pessoas que curtiram o post (além das duas
     pessoas já mencionadas no início da mensagem).
 */
+
+const getPosts = (array => {
+  const arrayLenght = array.length;
+  const firstElement = array[0];
+  const secondElement = array[1];
+  const thirdElement = array[2];
+
+  switch (array.length) {
+    case 0:
+      return `Ninguém curtiu isso`;
+      break;
+    case 1:
+      return `${firstElement} curtiu isso`;
+    case 2:
+      return `${firstElement} e ${secondElement} curtiram isso`;
+    case 3:
+      return `${firstElement}, ${secondElement} e ${thirdElement} curtiram isso`;
+    default:
+      return `${firstElement}, ${secondElement} e mais ${arrayLenght - 2} curtiram isso`;
+      break;
+  }
+});
+
+console.log(getPosts(['Danilo', 'Mariana', 'Regina', 'Marie']));
