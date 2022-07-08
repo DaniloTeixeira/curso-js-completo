@@ -27,6 +27,15 @@ const best2019Movies = [
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
 ];
 
+let message = `Segundo o site Omelete, os melhores filmes de 2019 são:`;
+
+const generateMovieMessage = movie => message += `
+- ${movie.title}, dirigido por ${movie.directedBy}`;
+
+const best2019MoviesList = best2019Movies.forEach(generateMovieMessage);
+
+console.log(message);
+
 /*
   02
 
@@ -59,8 +68,16 @@ const youtubeUser = {
       gitHub: 'https://github.com/Roger-Melo'
     },
     country: 'Brasil'
+  },
+
+  getRecentVideos() {
+    console.log(`Vídeos recentes de ${this.name}:`);
+
+    this.videos.recentVideos.forEach(video => console.log(video.title));
   }
 };
+
+youtubeUser.getRecentVideos();
 
 /*
   03
@@ -68,6 +85,7 @@ const youtubeUser = {
   - Exiba o valor do PI no console.
 */
 
+console.log(Math.PI);
 
 
 /*
@@ -79,6 +97,9 @@ const youtubeUser = {
 
 const firstNumber = 8.3;
 
+// Arredonda o número para cima
+console.log(Math.ceil(firstNumber));
+
 /*
   05
 
@@ -88,6 +109,8 @@ const firstNumber = 8.3;
 
 const secondNumber = 3.5;
 
+// Arredonda o número para o mais próximo. (Até .4, arredonda para baixo, a partir de .5, arredonda para cima)
+console.log(Math.round(secondNumber));
 /*
   06
 
@@ -97,13 +120,19 @@ const secondNumber = 3.5;
 
 const thirdNumber = 8.9;
 
-/*
-  07
+// Arredonda para baixo
+console.log(Math.floor(thirdNumber));
 
-  - Exiba no console o número abaixo com a parte decimal removida.
+/*
+07
+
+- Exiba no console o número abaixo com a parte decimal removida.
 */
 
 const fourthNumber = 5.5;
+
+// Retorna apenas a parte inteira
+console.log(Math.trunc(fourthNumber));
 
 /*
   08
@@ -111,3 +140,9 @@ const fourthNumber = 5.5;
   - A cada vez que o index.html for carregado, exiba no console um número
     aleatório de 0 à 10, incluindo 0 e 10.
 */
+
+// Gera um número decimal aleatório, entre 0 e 1
+const randomNumber = Math.random();
+
+// Exibe um número aleatório de 0 a 10, arredondando o valor para o inteiro mais próximo
+console.log(Math.round(randomNumber * 10));
