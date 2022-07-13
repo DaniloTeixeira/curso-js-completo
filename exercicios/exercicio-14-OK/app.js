@@ -5,7 +5,9 @@
     maiúsculas.
 */
 
-const title = document.querySelector("h1");
+const title = document.querySelector('h1');
+
+// title.innerText = title.innerText.toUpperCase();
 title.textContent = title.textContent.toUpperCase();
 
 /*
@@ -16,13 +18,11 @@ title.textContent = title.textContent.toUpperCase();
 */
 
 const numbers = [53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55];
-const ul = document.querySelector(".numbers");
+const ul = document.querySelector('.numbers');
 
-const insertNumberIntoUl = (number) => {
-  ul.innerHTML += `<li class="number"> ${number} </li>`;
-};
-
-numbers.forEach(insertNumberIntoUl);
+numbers.forEach(number => {
+  ul.innerHTML += `<li class="number">${number}</li>`;
+});
 
 /*
   03
@@ -32,17 +32,12 @@ numbers.forEach(insertNumberIntoUl);
     - Se o número é ímpar, exiba-o na cor "pink".
 */
 
-const liS = document.querySelectorAll("li");
+const liList = document.querySelectorAll('li');
 
-liS.forEach((li) => {
+liList.forEach(li => {
   const isEven = Number(li.textContent % 2 === 0);
 
-  if (isEven) {
-    li.style.color = "lightblue";
-    return;
-  }
-
-  li.style.color = "pink";
+  isEven ? li.style.color = 'lightblue' : li.style.color = 'pink';
 });
 
 /*
@@ -53,22 +48,21 @@ liS.forEach((li) => {
   P.s: a classe "body-background" já está declarada no style.css.
 */
 
-const body = document.querySelector("body");
-body.classList.add("body-background");
+const body = document.querySelector('body');
+
+body.classList.add('body-background');
 
 /*
   05
 
-  - Adicione o link 
-    https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo no href  
+  - Adicione o link
+    https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo no href
     do link do index.html.
 */
 
-const link = document.querySelector("a");
-link.setAttribute(
-  "href",
-  "https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo"
-);
+const link = document.querySelector('a');
+
+link.setAttribute('href', 'https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo');
 
 /*
   06
@@ -76,12 +70,12 @@ link.setAttribute(
   - Exiba o novo valor do atributo href do link no console.
 */
 
-console.log(link.getAttribute("href"));
+console.log(link.getAttribute('href'));
 
 /*
   07
 
-  - Exiba, no console, um objeto com todas as propriedades CSS que podem ser  
+  - Exiba, no console, um objeto com todas as propriedades CSS que podem ser
     manipuladas via JS no h1.
 */
 
@@ -93,7 +87,7 @@ console.log(title.style);
   - Remova a classe "body-background", do elemento body.
 */
 
-body.classList.remove("body-background");
+body.classList.remove('body-background');
 
 /*
   09
@@ -102,4 +96,4 @@ body.classList.remove("body-background");
   - Não utilize o método remove() para fazer isso.
 */
 
-link.classList.toggle("link");
+link.classList.toggle('body-background');

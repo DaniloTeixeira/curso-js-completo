@@ -113,3 +113,4 @@ spans.forEach((span) => {
 // Remove a classe, se ela já existir
 title3.classList("test"); // Não existia, então foi adicionada
 title3.classList("test"); // Existia, então foi removida
+

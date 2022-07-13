@@ -7,7 +7,6 @@
 */
 
 
-
 /*
   02
 
@@ -30,7 +29,6 @@
 
   - Descubra quem é o irmão anterior da ul e exiba-o no console;
 */
-
 
 
 /*
@@ -58,11 +56,13 @@ const videos = [{
 }, {
   name: 'Como fazer requisições HTTP com o método fetch | JavaScript',
   length: '00:02:55'
-}]
+}];
+
 
 /*
   07
 
-  - Se um clique no h1 acontecer, faça com que todos os elementos dentro do body 
+  - Se um clique no h1 acontecer, faça com que todos os elementos dentro do body
     sejam removidos.
 */
+
