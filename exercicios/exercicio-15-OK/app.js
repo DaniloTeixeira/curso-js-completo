@@ -27,6 +27,7 @@ const h2 = document.querySelector('h2');
 
 console.log(h2.parentElement);
 
+
 /*
   03
 
@@ -36,7 +37,6 @@ console.log(h2.parentElement);
 const h1 = document.querySelector('h1');
 
 console.log(h1.nextElementSibling);
-
 
 /*
   04

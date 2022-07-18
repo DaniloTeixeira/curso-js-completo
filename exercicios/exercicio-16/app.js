@@ -5,18 +5,21 @@
     'Clicou na div.' não seja exibida no console.
 */
 
-const div = document.querySelector('div')
-const elementsInsideDiv = Array.from(div.children)
+const div = document.querySelector('div');
+const elementsInsideDiv = Array.from(div.children);
+const h2 = document.querySelector('h2');
 
-elementsInsideDiv.forEach(element => {
-  element.addEventListener('click', () => {
-    console.log('Clicou no filho da div.')
-  })
-})
+elementsInsideDiv.forEach((element, index) => {
+  element.addEventListener('click', (event) => {
+    event.stopPropagation();
+    h2.textContent = `Clicou no ${event.target.tagName.toLowerCase()}, ${index + 1}º filho da div.`;
+
+  });
+});
 
 div.addEventListener('click', () => {
-  console.log('Clicou na div.')
-})
+  h2.textContent = 'Clicou na div.';
+});
 
 /*
   02
@@ -26,6 +29,8 @@ div.addEventListener('click', () => {
     da div.".
 */
 
+// OK 
+
 /*
   03
 
@@ -33,6 +38,8 @@ div.addEventListener('click', () => {
   - Faça com que a mensagem de clique na div e a mensagem de clique em algum
     filho da div, ao invés de ser exibida no console, seja inserida neste h2.
 */
+
+// OK
 
 /*
   04
@@ -75,4 +82,4 @@ const people = [
   { id: 7, name: 'Ana Paula', profession: 'Front-end developer' },
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
-]
+];
